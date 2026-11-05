@@ -113,12 +113,12 @@ const portfolioData = {
         title: "Personal Portfolio & Digital Identity",
         category: "Front-End & UI/UX Design",
         tag: "Interactive Portfolio",
-        description: "Website portofolio pribadi modern bergaya futuristik minimalis dengan sistem tema bilingual (ID/EN) dan performa tinggi.",
+        description: "Website portofolio pribadi modern bergaya cyber black & neon green dengan sistem tema bilingual (ID/EN) dan performa tinggi.",
         problem: "Membutuhkan platform profesional untuk membangun personal branding, memamerkan hasil karya nyata, dan menarik peluang kerja/freelance.",
         solution: "Merancang sistem desain berbasis token CSS, arsitektur responsif mobile-first, dan struktur studi kasus berorientasi pemecahan masalah.",
         tools: ["HTML5", "CSS3 Variables", "Vanilla JavaScript", "Figma", "GitHub Pages"],
-        githubUrl: "https://github.com/oliksupriadi-exe92",
-        demoUrl: "#",
+        githubUrl: "https://github.com/oliksupriadi-exe92/Portfolio",
+        demoUrl: "https://oliksupriadi-exe92.github.io/Portfolio/",
         imagePlaceholder: "💻 Personal Web"
       }
     ],
@@ -257,12 +257,12 @@ const portfolioData = {
         title: "Personal Portfolio & Digital Identity",
         category: "Front-End & UI/UX Design",
         tag: "Interactive Portfolio",
-        description: "A sleek futuristic-minimalist personal portfolio featuring a bilingual system (ID/EN) and high-performance design architecture.",
+        description: "A sleek cyber black & neon green personal portfolio featuring a bilingual system (ID/EN) and high-performance design architecture.",
         problem: "Requiring a standout platform to establish professional branding, showcase real-world projects, and attract tech recruiters & clients.",
         solution: "Engineered a CSS-tokenized design system, mobile-first responsive layouts, and problem-oriented case study presentations.",
         tools: ["HTML5", "CSS3 Variables", "Vanilla JavaScript", "Figma", "GitHub Pages"],
-        githubUrl: "https://github.com/oliksupriadi-exe92",
-        demoUrl: "#",
+        githubUrl: "https://github.com/oliksupriadi-exe92/Portfolio",
+        demoUrl: "https://oliksupriadi-exe92.github.io/Portfolio/",
         imagePlaceholder: "💻 Personal Web"
       }
     ],

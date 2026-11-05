@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kholid Supriadi — Web Developer & UI/UX Designer</title>
+  <meta name="description"
+    content="Portofolio Kholid Supriadi, Mahasiswa Teknik Informatika ITSB yang fokus pada Web Development, UI/UX Design, dan Digital Content.">
+
+  <!-- GOOGLE FONTS: Space Grotesk (Headings), Inter (Body), & JetBrains Mono (Tech/Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- STYLESHEETS: variables.css dimuat lebih dulu agar nilainya bisa dibaca oleh style.css -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- THEME SCRIPT: Dijalankan di awal untuk mencegah efek kedipan putih (FOUC) -->
+  <script src="assets/js/theme.js"></script>
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="logo">
+        <span class="logo-bracket">&lt;</span>KH<span class="text-neon">'92</span><span class="logo-bracket">&gt;</span>
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link" id="nav-about">Tentang</a></li>
+          <li><a href="#skills" class="nav-link" id="nav-skills">Keahlian</a></li>
+          <li><a href="#experience" class="nav-link" id="nav-experience">Pengalaman</a></li>
+          <li><a href="#projects" class="nav-link" id="nav-projects">Proyek</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-contact">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Tombol Aksi Cepat, Language Switcher, & Theme Toggle -->
+      <div class="nav-actions">
+        <!-- Tombol Toggle Bahasa (ID / EN) -->
+        <button id="lang-toggle" class="btn-lang" title="Ganti Bahasa / Switch Language">
+          <span class="lang-text active" id="lang-id">ID</span>
+          <span class="lang-separator">/</span>
+          <span class="lang-text" id="lang-en">EN</span>
+        </button>
+
+        <!-- Tombol Toggle Tema (Dark 🌙 / Light ☀️) -->
+        <button id="theme-toggle" class="btn-theme" title="Beralih Tema / Toggle Theme" aria-label="Toggle Theme">
+          <!-- Ikon Matahari (Tampil saat Dark Mode) -->
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Ikon Bulan (Tampil saat Light Mode) -->
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-outline" id="nav-cta-btn">Hubungi Saya</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: Tempat semua section akan diletakkan secara bertahap -->
+  <main id="main-content">
+    <!-- SECTION 1: HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+
+        <!-- Kolom Kiri: Informasi, Headline, dan Tombol Aksi -->
+        <div class="hero-content">
+          <!-- Status Badge: Menunjukkan kesiapan kerja (Recruiter & Klien suka ini) -->
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span id="hero-status-text" class="font-mono">DESIGN &bull; CODE &bull; CREATE</span>
+          </div>
+
+          <!-- Headline Utama -->
+          <h1 class="hero-title" id="hero-title">
+            Hello, I'm <span class="text-neon">Kholid Supriadi</span>.<br>
+            Building Ideas Into <span class="text-gradient">Digital Experiences</span>.
+          </h1>
+
+          <!-- Sub-headline / Peran -->
+          <h2 class="hero-subtitle" id="hero-subtitle">
+            Informatics Student at <strong>Institut Teknologi Sains Bandung (ITSB)</strong> &bull; <span class="text-accent">Front-End Developer & UI Designer</span>
+          </h2>
+
+          <!-- Paragraf Singkat Positioning (5 detik pertama) -->
+          <p class="hero-description" id="hero-description">
+            Bridging intuitive UI/UX design with clean, high-performance web code to turn creative concepts into functional digital products.
+          </p>
+
+          <!-- Call To Action (CTA Buttons) -->
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
+              <span id="hero-btn-projects-text">Explore Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </a>
+            <!-- Tombol Unduh CV Langsung (PDF) -->
+            <a href="assets/docs/CV_Kholid_Supriadi.pdf" download="CV_Kholid_Supriadi.pdf" class="btn btn-outline"
+              id="hero-btn-cv" title="Unduh Curriculum Vitae Kholid Supriadi">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span id="hero-btn-cv-text">Download CV (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Quick Social Links (Ikon Minimalis SVG Gratis) -->
+          <div class="hero-socials">
+            <span class="social-label" id="hero-social-label">Temukan saya di:</span>
+            <div class="social-links">
+              <!-- GitHub -->
+              <a href="https://github.com/oliksupriadi-exe92" target="_blank" rel="noopener noreferrer"
+                class="social-link" title="GitHub oliksupriadi-exe92">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/kholik-supriadi-5b3ba6427/" target="_blank" rel="noopener noreferrer"
+                class="social-link" title="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <!-- Email / Mail -->
+              <a href="mailto:oliksupriadi92@gmail.com" class="social-link" title="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Frame Visual Foto Profil Futuristik -->
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-glow"></div>
+            <div class="profile-image-wrapper">
+              <!-- Foto asli Kholid Supriadi dari assets/images/kholid-profile.jpeg -->
+              <img src="assets/images/kholid-profile.jpeg" alt="Foto Kholid Supriadi" class="profile-image">
+            </div>
+
+            <!-- Floating Badge: Kartu melayang pemanis visual futuristik -->
+            <div class="floating-badge badge-code">
+              <span class="badge-icon">⚡</span>
+              <div class="badge-text">
+                <strong>Clean Code</strong>
+                <small>Frontend Dev</small>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-design">
+              <span class="badge-icon">🎨</span>
+              <div class="badge-text">
+                <strong>Intuitive UI</strong>
+                <small>User Experience</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- SECTION 2: ABOUT ME -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" id="about-badge">Profil & Latar Belakang</span>
+          <h2 class="section-title" id="about-title">Tentang <span class="text-gradient">Saya</span></h2>
+          <p class="section-subtitle" id="about-subtitle">Menghubungkan Logika Pemrograman dan Estetika Visual</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Kolom Cerita / Narasi -->
+          <div class="about-text-card">
+            <p id="about-p1">
+              Saya Kholid Supriadi, mahasiswa Teknik Informatika di Institut Teknologi Sains Bandung (ITSB). Berada di
+              titik temu antara logika pemrograman dan estetika visual, saya fokus mengembangkan solusi digital yang
+              bersih, responsif, dan mudah digunakan.
+            </p>
+            <p id="about-p2">
+              Bagi saya, kode yang baik bukan hanya tentang fungsi teknis, melainkan tentang menghadirkan pengalaman
+              pengguna yang bermakna. Di luar koding, saya aktif mengeksplorasi desain grafis, visual digital, dan
+              berkolaborasi dalam berbagai proyek teknologi kampus.
+            </p>
+          </div>
+
+          <!-- Kolom Highlight / Statistik Kampus -->
+          <div class="about-highlights" id="about-highlights">
+            <div class="highlight-card">
+              <span class="highlight-icon">🎓</span>
+              <div class="highlight-info">
+                <small>Institusi</small>
+                <strong>ITSB (Teknik Informatika)</strong>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <span class="highlight-icon">🎯</span>
+              <div class="highlight-info">
+                <small>Fokus Utama</small>
+                <strong>Front-End & UI/UX Design</strong>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <span class="highlight-icon">💡</span>
+              <div class="highlight-info">
+                <small>Filosofi Kerja</small>
+                <strong>Clean Code & User-Centered</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SKILLS & TECH STACK -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Keahlian & Teknologi</span>
+          <h2 class="section-title">Tech <span class="text-gradient">Stack</span></h2>
+          <p class="section-subtitle">Alat dan teknologi yang saya gunakan untuk membangun solusi digital.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Kategori 1: Web Development -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <span class="category-icon">🌐</span>
+              <h3>Front-End Web</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML5 (Semantic)</span>
+              <span class="skill-tag">CSS3 (Grid/Flexbox)</span>
+              <span class="skill-tag">Modern JavaScript</span>
+              <span class="skill-tag">React.js (Learning)</span>
+            </div>
+          </div>
+
+          <!-- Kategori 2: Programming & Automation -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <span class="category-icon">⚡</span>
+              <h3>Programming & Bot</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Telegram Bot API</span>
+              <span class="skill-tag">Data Analytics Logic</span>
+              <span class="skill-tag">Automation</span>
+            </div>
+          </div>
+
+          <!-- Kategori 3: UI/UX & Visual Design -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <span class="category-icon">🎨</span>
+              <h3>UI/UX & Creative</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma UI Design</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">Design Systems</span>
+              <span class="skill-tag">Digital Poster Design</span>
+            </div>
+          </div>
+
+          <!-- Kategori 4: Workflow & Version Control -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <span class="category-icon">🛠️</span>
+              <h3>Tools & Workflow</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">Static Hosting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: EXPERIENCE & LEADERSHIP -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" id="experience-badge">Jejak Langkah & Kontribusi</span>
+          <h2 class="section-title" id="experience-title">Pengalaman & <span class="text-gradient">Kepemimpinan</span>
+          </h2>
+          <p class="section-subtitle" id="experience-subtitle">Aktivitas organisasi, pengabdian masyarakat, dan peran
+            kreatif yang melatih komunikasi dan kepemimpinan saya.</p>
+        </div>
+
+        <div class="timeline" id="experience-timeline">
+          <!-- Item 1: Pengabdian Pendidikan -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag">Community Service</span>
+                <span class="timeline-period" id="exp-period-1">2024 - Sekarang</span>
+              </div>
+              <h3 class="timeline-role" id="exp-role-1">Fasilitator & Edukator Literasi Digital</h3>
+              <h4 class="timeline-org" id="exp-org-1">Program Pengabdian di Lingkungan Pendidikan</h4>
+              <p class="timeline-desc" id="exp-desc-1">
+                Memfasilitasi edukasi pemanfaatan teknologi dan literasi digital dasar bagi siswa, menyederhanakan
+                konsep teknis menjadi modul interaktif yang menyenangkan dan mudah dipahami.
+              </p>
+              <div class="timeline-skills">
+                <span class="skill-tag">Public Speaking</span>
+                <span class="skill-tag">User Empathy</span>
+                <span class="skill-tag">Mentoring</span>
+                <span class="skill-tag">Educational Tech</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Organisasi Kampus -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag">Campus Organization</span>
+                <span class="timeline-period" id="exp-period-2">2023 - 2024</span>
+              </div>
+              <h3 class="timeline-role" id="exp-role-2">Koordinator Kreatif & Publikasi Digital</h3>
+              <h4 class="timeline-org" id="exp-org-2">Organisasi & Kepanitiaan Kampus ITSB</h4>
+              <p class="timeline-desc" id="exp-desc-2">
+                Memimpin perancangan aset grafis digital, poster kegiatan, dan publikasi media sosial untuk berbagai
+                agenda kampus, memastikan konsistensi visual di setiap materi publikasi.
+              </p>
+              <div class="timeline-skills">
+                <span class="skill-tag">Visual Design</span>
+                <span class="skill-tag">Cross-team Collaboration</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Eksplorasi Teknis Mandiri -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag">Technical Initiative</span>
+                <span class="timeline-period" id="exp-period-3">2024</span>
+              </div>
+              <h3 class="timeline-role" id="exp-role-3">Pengembang Solusi Teknologi Mandiri</h3>
+              <h4 class="timeline-org" id="exp-org-3">Eksplorasi Proyek Teknologi & Open Source</h4>
+              <p class="timeline-desc" id="exp-desc-3">
+                Meriset dan mengembangkan proyek mandiri terintegrasi seperti LogicLoop dan Transit_in untuk memecahkan
+                kendala nyata efisiensi belajar mahasiswa dan rute mobilitas.
+              </p>
+              <div class="timeline-skills">
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Full-Stack Development</span>
+                <span class="skill-tag">API Integration</span>
+                <span class="skill-tag">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PROJECTS (STUDI KASUS) -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" id="projects-badge">Portofolio Proyek</span>
+          <h2 class="section-title" id="projects-title">Karya & <span class="text-gradient">Proyek Pilihan</span></h2>
+          <p class="section-subtitle" id="projects-subtitle">Studi kasus aplikasi dan sistem yang saya kembangkan dari
+            ide hingga implementasi kode.</p>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Proyek 1: LogicLoop (Featured Project) -->
+          <article class="project-card featured-project">
+            <div class="project-header">
+              <span class="project-tag">⭐ Featured Project</span>
+              <span class="project-category">Full-Stack Web & Automation</span>
+            </div>
+
+            <h3 class="project-title">LogicLoop — Academic Management Platform</h3>
+
+            <p class="project-desc">
+              Platform manajemen akademik mahasiswa cerdas dengan fitur <strong>Auto-Prioritas Tugas</strong>, simulasi
+              target nilai & prediksi UAS, dashboard analitik, dan notifikasi pengingat via Telegram Bot.
+            </p>
+
+            <div class="project-details">
+              <div class="detail-box">
+                <span class="detail-title">Masalah yang Diselesaikan:</span>
+                <p>Mahasiswa kesulitan mengelola banyak tenggat tugas, menghitung proyeksi nilai ujian, dan menyusun
+                  prioritas belajar efektif.</p>
+              </div>
+              <div class="detail-box">
+                <span class="detail-title">Solusi Sistem:</span>
+                <p>Algoritma pembobotan otomatis berbasis deadline dan SKS, dikombinasikan dengan bot Telegram otomatis
+                  untuk pengingat langsung ke HP.</p>
+              </div>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Telegram Bot API</span>
+              <span class="tech-badge">Analytics Dashboard</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/oliksupriadi-exe92/LogicLoop_Project_" target="_blank"
+                rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                Lihat di GitHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyek 2: Transit_in -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-tag">Web Project</span>
+              <span class="project-category">Web Application & System</span>
+            </div>
+
+            <h3 class="project-title">Transit_in — Transport & Logistics Solution</h3>
+
+            <p class="project-desc">
+              Sistem informasi dan monitoring rute transit transportasi yang dirancang untuk kemudahan mobilitas dan
+              keteraturan logistik perjalanan.
+            </p>
+
+            <div class="project-details">
+              <div class="detail-box">
+                <span class="detail-title">Fokus Desain & Teknis:</span>
+                <p>Navigasi rute intuitif, performa pemuatan data yang cepat, serta tampilan antarmuka yang bersih dan
+                  mudah dipahami pengguna.</p>
+              </div>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">HTML5/CSS3</span>
+              <span class="tech-badge">UI/UX Design</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/oliksupriadi-exe92/Transit_in" target="_blank" rel="noopener noreferrer"
+                class="btn btn-outline btn-sm">
+                Lihat di GitHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyek 3: Personal Portfolio -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-tag">Digital Identity</span>
+              <span class="project-category">Front-End & UI/UX</span>
+            </div>
+
+            <h3 class="project-title">Personal Portfolio & Digital Identity</h3>
+
+            <p class="project-desc">
+              Website portofolio pribadi responsif bergaya modern-futuristik dengan arsitektur sistem desain berbasis
+              CSS Variables dan dukungan bilingual (ID/EN).
+            </p>
+
+            <div class="project-details">
+              <div class="detail-box">
+                <span class="detail-title">Nilai Tambah:</span>
+                <p>100% cepat tanpa ketergantungan build-tool berat, aksesibel, dan dirancang khusus ramah recruiter
+                  teknologi.</p>
+              </div>
+            </div>
+
+            <div class="project-tech-list">
+              <span class="tech-badge">HTML5 Semantic</span>
+              <span class="tech-badge">CSS Variables</span>
+              <span class="tech-badge">Bilingual System</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/oliksupriadi-exe92" target="_blank" rel="noopener noreferrer"
+                class="btn btn-outline btn-sm">
+                Profil GitHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT & SERVERLESS FORM -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" id="contact-badge">Hubungi Saya</span>
+          <h2 class="section-title" id="contact-title">Mari <span class="text-gradient">Berkolaborasi</span></h2>
+          <p class="section-subtitle" id="contact-subtitle">
+            Punya ide proyek, tawaran magang, atau ingin mendiskusikan peluang kerja sama? Kirim pesan langsung melalui
+            formulir di bawah ini.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Kolom Kiri: Saluran Komunikasi Langsung -->
+          <div class="contact-info-panel">
+            <h3 class="panel-title" id="contact-info-title">Saluran Komunikasi Langsung</h3>
+
+            <div class="contact-info-card">
+              <div class="info-icon">✉️</div>
+              <div class="info-body">
+                <small id="info-email-label">Email Utama</small>
+                <a href="mailto:oliksupriadi92@gmail.com" class="info-link">oliksupriadi92@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="info-icon">🐙</div>
+              <div class="info-body">
+                <small id="info-github-label">Profil GitHub</small>
+                <a href="https://github.com/oliksupriadi-exe92" target="_blank" rel="noopener noreferrer"
+                  class="info-link">github.com/oliksupriadi-exe92</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="info-icon">📍</div>
+              <div class="info-body">
+                <small id="info-location-label">Lokasi</small>
+                <strong id="info-location-val">Bandung, Jawa Barat, Indonesia</strong>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="info-icon">⚡</div>
+              <div class="info-body">
+                <small id="info-status-label">Status Ketersediaan</small>
+                <strong class="text-accent" id="info-status-val">Terbuka untuk Magang & Freelance</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Form Kontak Serverless Gratis (Web3Forms) -->
+          <div class="contact-form-panel">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <!-- Web3Forms Access Key (100% Gratis - Nanti bisa kamu ganti dengan key milikmu dari web3forms.com) -->
+              <input type="hidden" name="access_key" value="20f831e0-4a9f-4b68-b785-7011b6724753" id="web3forms-key">
+
+              <!-- Anti-Spam Honeypot Botcheck (Tersembunyi dari manusia) -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <!-- Input Nama -->
+              <div class="form-group">
+                <label for="form-name" id="form-name-label">Nama Lengkap</label>
+                <input type="text" name="name" id="form-name" required placeholder="Masukkan nama Anda atau perusahaan">
+              </div>
+
+              <!-- Input Email -->
+              <div class="form-group">
+                <label for="form-email" id="form-email-label">Alamat Email</label>
+                <input type="email" name="email" id="form-email" required placeholder="nama@contoh.com">
+              </div>
+
+              <!-- Pilihan Subjek / Keperluan -->
+              <div class="form-group">
+                <label for="form-subject" id="form-subject-label">Keperluan / Subjek</label>
+                <select name="subject" id="form-subject" required>
+                  <option value="Tawaran Magang / Junior Developer" id="subj-opt-1">Tawaran Magang / Junior Developer
+                  </option>
+                  <option value="Peluang Proyek Freelance / Desain Web" id="subj-opt-2">Peluang Proyek Freelance /
+                    Desain Web</option>
+                  <option value="Kolaborasi Teknologi & Proyek Kampus" id="subj-opt-3">Kolaborasi Teknologi & Proyek
+                    Kampus</option>
+                  <option value="Pertanyaan Umum / Diskusi" id="subj-opt-4">Pertanyaan Umum / Diskusi</option>
+                </select>
+              </div>
+
+              <!-- Textarea Pesan -->
+              <div class="form-group">
+                <label for="form-message" id="form-message-label">Pesan Anda</label>
+                <textarea name="message" id="form-message" rows="5" required
+                  placeholder="Tuliskan detail proyek atau pesan yang ingin didiskusikan..."></textarea>
+              </div>
+
+              <!-- Tombol Submit -->
+              <button type="submit" class="btn btn-primary btn-submit" id="form-submit-btn">
+                <span id="form-submit-text">Kirim Pesan Sekarang</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <!-- Pesan Status Pengiriman (Feedback Dinamis via JS) -->
+              <div id="form-status" class="form-status-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="logo-bracket">&lt;</span>KH<span class="text-neon">'92</span><span class="logo-bracket">&gt;</span>
+        <p class="footer-tagline">Designing with Purpose, Building with Code.</p>
+      </div>
+      <p class="footer-copy">&copy; 2026 Kholid Supriadi. Dibuat dengan HTML5, CSS Variables & Vanilla JS.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: Muat basis data content.js sebelum script.js -->
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

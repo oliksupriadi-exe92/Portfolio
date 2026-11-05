@@ -1,0 +1,91 @@
+/* ==========================================================================
+   VARIABLES.CSS - Sistem Desain & Token Warna (Cyber Black & Neon Green)
+   ==========================================================================
+   Inspirasi: Devstarter (shadcn/ui), CyberCode Portfolio, & Bruno Portfolio.
+   Pusat kendali warna, tipografi Space Grotesk + Inter, spasi, dan ambient glow.
+   ========================================================================== */
+
+:root {
+  /* --- PALET WARNA (True Tech Black & Cyber Neon Green) --- */
+  --bg-primary: #05070a;        /* Deep Cyber Black: Hitam pekat modern berkarakter */
+  --bg-surface: #0d1117;        /* Surface Card: Latar kartu dengan kedalaman (elevation) */
+  --bg-surface-hover: #131922;  /* Kartu saat disentuh kursor */
+
+  /* Warna Teks (Kontras Tinggi WCAG AAA) */
+  --text-primary: #f8fafc;      /* Putih bersih untuk judul utama */
+  --text-secondary: #94a3b8;    /* Slate-400 untuk paragraf & keterbacaan tinggi */
+  --text-muted: #64748b;        /* Slate-500 untuk metadata, tanggal & angka */
+
+  /* Warna Aksen Neon Futuristik */
+  --accent-neon: #00ff88;       /* Electric Cyber Mint / Hijau Neon utama */
+  --accent-cyan: #00ff88;       /* Sinkronisasi aksen neon ke seluruh link/border */
+  --accent-emerald: #10b981;    /* Hijau emerald penyeimbang gradasi */
+  --accent-purple: #00ff88;     /* Monokromatik cyber focus */
+  --gradient-tech: linear-gradient(135deg, #00ff88 0%, #10b981 100%);
+
+  /* Border & Garis Pembatas Halus (shadcn style) */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(0, 255, 136, 0.4);
+
+  /* Efek Cahaya Halus (Ambient Cyber Glow - Lembut & Elegan) */
+  --glow-cyan: 0 0 25px rgba(0, 255, 136, 0.18);
+  --glow-neon: 0 0 25px rgba(0, 255, 136, 0.18);
+  --glow-neon-strong: 0 0 35px rgba(0, 255, 136, 0.35);
+  --glow-subtle: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+
+  /* Komponen Khusus (Dark Mode) */
+  --navbar-bg: rgba(5, 7, 10, 0.85);
+  --footer-bg: rgba(5, 7, 10, 0.95);
+  --input-bg: rgba(13, 17, 23, 0.85);
+  --floating-bg: rgba(13, 17, 23, 0.92);
+  --btn-primary-text: #05070a;
+  --detail-box-bg: rgba(5, 7, 10, 0.6);
+
+  /* --- TIPOGRAFI MODERN & TEGAS --- */
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  /* --- UKURAN & SPASI (8pt Grid System) --- */
+  --max-width: 1140px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* --- TRANSISI HALUS --- */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   PALET TEMA TERANG (MODERN SLATE TECH - LIGHT MODE)
+   ========================================================================== */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;        /* Slate-50: Latar belakang lembut */
+  --bg-surface: #ffffff;        /* Putih bersih untuk kartu */
+  --bg-surface-hover: #f1f5f9;  /* Slate-100 saat hover */
+
+  --text-primary: #0f172a;      /* Slate-900 sangat tajam & nyaman dibaca */
+  --text-secondary: #475569;    /* Slate-600 untuk teks paragraf */
+  --text-muted: #64748b;        /* Slate-500 */
+
+  --accent-neon: #059669;       /* Deep Emerald Green (Kontras WCAG AAA di latar terang) */
+  --accent-cyan: #059669;
+  --accent-emerald: #10b981;
+  --gradient-tech: linear-gradient(135deg, #059669 0%, #10b981 100%);
+
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-hover: rgba(5, 150, 105, 0.4);
+
+  --glow-cyan: 0 4px 20px rgba(5, 150, 105, 0.12);
+  --glow-neon: 0 4px 20px rgba(5, 150, 105, 0.12);
+  --glow-subtle: 0 10px 25px rgba(15, 23, 42, 0.06);
+
+  --navbar-bg: rgba(248, 250, 252, 0.88);
+  --footer-bg: #ffffff;
+  --input-bg: #f8fafc;
+  --floating-bg: rgba(255, 255, 255, 0.94);
+  --btn-primary-text: #ffffff;
+  --detail-box-bg: rgba(15, 23, 42, 0.03);
+}

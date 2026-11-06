@@ -85,10 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (aboutP1) aboutP1.textContent = data.about.paragraphs[0];
     if (aboutP2) aboutP2.textContent = data.about.paragraphs[1];
 
-    // --- D. EXPERIENCE SECTION ---
+    // --- D. EXPERIENCE SECTION (Dinamis dari content.js) ---
     const expBadge = document.getElementById('experience-badge');
     const expTitle = document.getElementById('experience-title');
     const expSubtitle = document.getElementById('experience-subtitle');
+    const expTimeline = document.getElementById('experience-timeline');
 
     if (expBadge && data.experienceSection) expBadge.textContent = data.experienceSection.badge;
     if (expTitle && data.experienceSection) {
@@ -98,42 +99,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (expSubtitle && data.experienceSection) expSubtitle.textContent = data.experienceSection.subtitle;
 
-    if (data.experiences && data.experiences.length >= 3) {
-      const expRole1 = document.getElementById('exp-role-1');
-      const expOrg1 = document.getElementById('exp-org-1');
-      const expDesc1 = document.getElementById('exp-desc-1');
-      const expPeriod1 = document.getElementById('exp-period-1');
-
-      const expRole2 = document.getElementById('exp-role-2');
-      const expOrg2 = document.getElementById('exp-org-2');
-      const expDesc2 = document.getElementById('exp-desc-2');
-      const expPeriod2 = document.getElementById('exp-period-2');
-
-      const expRole3 = document.getElementById('exp-role-3');
-      const expOrg3 = document.getElementById('exp-org-3');
-      const expDesc3 = document.getElementById('exp-desc-3');
-      const expPeriod3 = document.getElementById('exp-period-3');
-
-      if (expRole1) expRole1.textContent = data.experiences[0].role;
-      if (expOrg1) expOrg1.textContent = data.experiences[0].organization;
-      if (expDesc1) expDesc1.textContent = data.experiences[0].description;
-      if (expPeriod1) expPeriod1.textContent = data.experiences[0].period;
-
-      if (expRole2) expRole2.textContent = data.experiences[1].role;
-      if (expOrg2) expOrg2.textContent = data.experiences[1].organization;
-      if (expDesc2) expDesc2.textContent = data.experiences[1].description;
-      if (expPeriod2) expPeriod2.textContent = data.experiences[1].period;
-
-      if (expRole3) expRole3.textContent = data.experiences[2].role;
-      if (expOrg3) expOrg3.textContent = data.experiences[2].organization;
-      if (expDesc3) expDesc3.textContent = data.experiences[2].description;
-      if (expPeriod3) expPeriod3.textContent = data.experiences[2].period;
+    // Render kartu pengalaman otomatis dari data.experiences
+    if (expTimeline && Array.isArray(data.experiences)) {
+      expTimeline.innerHTML = data.experiences.map((exp) => `
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-tag">${exp.type}</span>
+              <span class="timeline-period">${exp.period}</span>
+            </div>
+            <h3 class="timeline-role">${exp.role}</h3>
+            <h4 class="timeline-org">${exp.organization}</h4>
+            <p class="timeline-desc">${exp.description}</p>
+            <div class="timeline-skills">
+              ${exp.skills.map((s) => `<span class="skill-tag">${s}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('');
     }
 
-    // --- E. PROJECTS SECTION HEADER ---
+    // --- E. PROJECTS SECTION (Dinamis dari content.js) ---
     const projectsBadge = document.getElementById('projects-badge');
     const projectsTitle = document.getElementById('projects-title');
     const projectsSubtitle = document.getElementById('projects-subtitle');
+    const projectsGrid = document.getElementById('projects-grid');
 
     if (projectsBadge) projectsBadge.textContent = data.projectsSection.badge;
     if (projectsTitle) {
@@ -142,6 +133,73 @@ document.addEventListener('DOMContentLoaded', () => {
         : `Featured <span class="text-gradient">Projects</span>`;
     }
     if (projectsSubtitle) projectsSubtitle.textContent = data.projectsSection.subtitle;
+
+    // Render kartu proyek otomatis dari data.projects
+    if (projectsGrid && Array.isArray(data.projects)) {
+      const problemLabel = lang === 'id' ? 'Masalah yang Diselesaikan:' : 'The Problem:';
+      const solutionLabel = lang === 'id' ? 'Solusi Sistem:' : 'The Solution:';
+      const viewGithubLabel = lang === 'id' ? 'Lihat di GitHub' : 'View on GitHub';
+      const demoLabel = lang === 'id' ? 'Demo Langsung' : 'Live Demo';
+
+      projectsGrid.innerHTML = data.projects.map((proj, idx) => {
+        const isFeatured = idx === 0 || proj.isFeatured;
+        return `
+          <article class="project-card ${isFeatured ? 'featured-project' : ''}">
+            <div class="project-header">
+              <span class="project-tag">${proj.tag}</span>
+              <span class="project-category">${proj.category}</span>
+            </div>
+            
+            <h3 class="project-title">${proj.title}</h3>
+            
+            <p class="project-desc">${proj.description}</p>
+
+            ${(proj.problem || proj.solution) ? `
+              <div class="project-details">
+                ${proj.problem ? `
+                  <div class="detail-box">
+                    <span class="detail-title">${problemLabel}</span>
+                    <p>${proj.problem}</p>
+                  </div>
+                ` : ''}
+                ${proj.solution ? `
+                  <div class="detail-box">
+                    <span class="detail-title">${solutionLabel}</span>
+                    <p>${proj.solution}</p>
+                  </div>
+                ` : ''}
+              </div>
+            ` : ''}
+
+            <div class="project-tech-list">
+              ${proj.tools.map((t) => `<span class="tech-badge">${t}</span>`).join('')}
+            </div>
+
+            <div class="project-actions">
+              ${proj.githubUrl ? `
+                <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn ${isFeatured ? 'btn-primary' : 'btn-outline'} btn-sm">
+                  ${viewGithubLabel}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              ` : ''}
+              ${(proj.demoUrl && proj.demoUrl !== proj.githubUrl && proj.demoUrl !== '#') ? `
+                <a href="${proj.demoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  ${demoLabel}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                </a>
+              ` : ''}
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
 
     // --- F. CONTACT SECTION & FORM ---
     const contactBadge = document.getElementById('contact-badge');

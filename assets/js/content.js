@@ -149,7 +149,7 @@ const portfolioData = {
       formSubmitBtn: "Kirim Pesan Sekarang",
       formSending: "Mengirim pesan...",
       formSuccess: "✅ Pesan Anda berhasil terkirim! Terima kasih telah menghubungi saya, saya akan segera membalasnya via email.",
-      formError: "⚠️ Terjadi kendala saat mengirim. Anda juga bisa langsung mengirim email ke: kholidsupriadi.dev@gmail.com"
+      formError: "⚠️ Terjadi kendala saat mengirim. Anda juga bisa langsung mengirim email ke: oliksupriadi92@gmail.com"
     }
   },
 
@@ -293,7 +293,7 @@ const portfolioData = {
       formSubmitBtn: "Send Message Now",
       formSending: "Sending message...",
       formSuccess: "✅ Your message has been sent successfully! Thank you for reaching out, I will reply shortly via email.",
-      formError: "⚠️ Something went wrong. You can also reach me directly at: kholidsupriadi.dev@gmail.com"
+      formError: "⚠️ Something went wrong. You can also reach me directly at: oliksupriadi92@gmail.com"
     }
   }
 };

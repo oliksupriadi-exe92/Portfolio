@@ -1212,15 +1212,225 @@ img {
 }
 
 
-/* Optimasi Tampilan Navbar di Smartphone */
+/* ==========================================================================
+   21. RESPONSIVE MOBILE-FIRST OPTIMIZATION (HP & TABLET)
+   ========================================================================== */
+
+/* Tombol Menu Hamburger Mobile (Default: sembunyikan di Desktop) */
+.btn-menu-mobile {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-menu-mobile:hover {
+  border-color: var(--accent-neon);
+  color: var(--accent-neon);
+}
+
+.icon-menu-open {
+  display: block;
+}
+
+.icon-menu-close {
+  display: none;
+}
+
+.btn-menu-mobile.active .icon-menu-open {
+  display: none;
+}
+
+.btn-menu-mobile.active .icon-menu-close {
+  display: block;
+  color: var(--accent-neon);
+}
+
+/* Tablet & Mobile Nav Rules (<= 768px) */
 @media (max-width: 768px) {
+  .btn-menu-mobile {
+    display: inline-flex;
+  }
+
+  /* Drawer Menu Navigasi Mobile */
+  .nav-menu {
+    position: fixed;
+    top: 61px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    padding: 1.5rem 2rem;
+    transform: translateY(-130%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s;
+    z-index: 99;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
   .nav-list {
-    display: none; /* Menu teks disembunyikan di layar kecil agar tidak sesak */
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0;
+  }
+
+  #nav-cta-btn {
+    display: none; /* Sembunyikan tombol CTA di navbar HP agar muat rapi */
+  }
+
+  .navbar-container {
+    padding: 0.75rem 0;
   }
 }
 
-@media (max-width: 480px) {
-  #nav-cta-btn {
-    display: none; /* Tombol Hubungi Saya disembunyikan di HP kecil karena sudah ada di Hero */
+/* Penyesuaian Khusus Smartphone (<= 640px) */
+@media (max-width: 640px) {
+  .hero {
+    padding: 2.5rem 0 3.5rem 0;
+  }
+
+  .hero-container {
+    gap: 2.2rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.22;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.8rem;
+  }
+
+  /* Tombol Hero Penuh & Nyaman Ditekan Jempol */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Frame Foto & Floating Badges di HP */
+  .profile-card {
+    width: 260px;
+    margin: 0 auto;
+  }
+
+  .floating-badge {
+    padding: 0.45rem 0.75rem;
+    gap: 0.5rem;
+    animation: none; /* Hentikan animasi floating agar tidak goyang di layar HP */
+  }
+
+  .badge-code {
+    top: -10px;
+    left: 0;
+  }
+
+  .badge-design {
+    bottom: -10px;
+    right: 0;
+  }
+
+  .badge-text strong {
+    font-size: 0.75rem;
+  }
+
+  .badge-text small {
+    font-size: 0.65rem;
+  }
+
+  /* Spasi Section & Padding Kartu di HP */
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.2rem;
+  }
+
+  .about-text-card {
+    padding: 1.4rem;
+  }
+
+  .highlight-card {
+    padding: 1rem 1.2rem;
+  }
+
+  .project-card {
+    padding: 1.4rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .timeline {
+    padding-left: 1.4rem;
+  }
+
+  .timeline::before {
+    left: 4px;
+  }
+
+  .timeline-dot {
+    left: -1.4rem;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding: 1.2rem 1.3rem;
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 1.4rem;
+  }
+
+  .footer-container {
+    text-align: center;
+    gap: 1.2rem;
   }
 }

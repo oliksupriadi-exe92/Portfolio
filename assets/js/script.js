@@ -276,4 +276,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // =========================================================================
+  // LOGIKA MENU NAVIGASI MOBILE (HAMBURGER DRAWER)
+  // =========================================================================
+  const menuToggleBtn = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (menuToggleBtn && navMenu) {
+    // Buka / Tutup drawer saat tombol hamburger diklik
+    menuToggleBtn.addEventListener('click', () => {
+      menuToggleBtn.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Otomatis tutup drawer saat salah satu menu diklik
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        menuToggleBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Tutup menu jika pengguna mengklik area luar menu
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+        menuToggleBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
 });
